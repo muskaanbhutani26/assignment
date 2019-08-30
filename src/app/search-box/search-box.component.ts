@@ -37,6 +37,13 @@ export class SearchBoxComponent implements OnInit {
 
   }
 
+  triggerSearchOnEnter(){
+    const searchQuery = this.searchForm.get('searchInput').value;
+    if(searchQuery){
+      this.searchShips(searchQuery);
+    }
+  }
+
   clearSearchInput(){
     this.searchForm.get('searchInput').patchValue('');
   }
@@ -51,6 +58,7 @@ export class SearchBoxComponent implements OnInit {
     console.log(data);
     this.shipsService.searchShips(data).subscribe((response: any) => {
       this.ships = response;
+      this.isLoading = false;
     }, (error) => {
       console.log(error);
     });

@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <form [formGroup]='searchForm'>
                   <mat-form-field class="col-md-8 bg-white" appearance="outline">
-                      <input matInput type="search" placeholder="Search" formControlName='searchInput'>
+                      <input matInput type="search" placeholder="Search" formControlName='searchInput' (keyup.enter)="triggerSearchOnEnter()">
                       <mat-icon *ngIf="showMagnifyingIcon" matSuffix>search</mat-icon>
                       <mat-icon *ngIf="!showMagnifyingIcon" matSuffix (click)="clearSearchInput()">clear</mat-icon>
                   </mat-form-field>
@@ -13,6 +13,9 @@
             </div>
         </div>
         <div class="row">
+            <mat-spinner *ngIf="isLoading" value="70"></mat-spinner>
+        </div>
+        <div class="row" *ngIf="ships.length > 0">
           <div class="col-md-8">
             <mat-list role="list">
               <mat-list-item *ngFor="let ship of ships" class="ships-details-list" role="listitem">
@@ -20,6 +23,11 @@
               </mat-list-item>
             </mat-list>
           </div>
+        </div>
+        <div class="row" *ngIf="ships.length === 0">
+            <div class="col-md-8">
+             <h4>No results found</h4>
+            </div>
         </div>
       </div>
     </div>
