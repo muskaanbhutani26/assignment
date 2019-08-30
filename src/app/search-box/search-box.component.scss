@@ -1,0 +1,50 @@
+.ships-list{
+    //color:#ffffff;
+}
+.container {
+    background-color:#D5D5D5;
+    min-height:100%;
+    padding:10px;
+  .row-padding{
+      padding:10px;
+  }
+
+  .ships-details-block{
+    border: 1px solid;
+    padding:10px;
+  }
+
+  .ships-details-list{
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .col-md-8{
+    padding-left:5px;
+    padding-right:5px;
+  }
+}
+
+::ng-deep .mat-form-field-wrapper{
+  padding-bottom:0;
+}
+
+
+
+
+/*::ng-deep .mat-autocomplete-panel{
+    background-color:#3e3838;
+    color:	#D3D3D3;
+}*/
+
+
+
+/*::ng-deep .mat-option{
+    color:	#D3D3D3;
+}
+
+::ng-deep .cdk-overlay-pane {
+    /* Do you changes here */
+    /*margin-left:-11px;
+     margin-top:26px;
+}*/

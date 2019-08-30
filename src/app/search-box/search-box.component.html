@@ -1,0 +1,26 @@
+<div class="ships-list container">
+    <div class="row row-padding">
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-8">
+                <form [formGroup]='searchForm'>
+                  <mat-form-field class="col-md-8 bg-white" appearance="outline">
+                      <input matInput type="search" placeholder="Search" formControlName='searchInput'>
+                      <mat-icon *ngIf="showMagnifyingIcon" matSuffix>search</mat-icon>
+                      <mat-icon *ngIf="!showMagnifyingIcon" matSuffix (click)="clearSearchInput()">clear</mat-icon>
+                  </mat-form-field>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <mat-list role="list">
+              <mat-list-item *ngFor="let ship of ships" class="ships-details-list" role="listitem">
+                <div class="col-md-4 ships-details-block">{{ship['name']}}</div>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
