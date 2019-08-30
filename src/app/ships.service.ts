@@ -15,21 +15,10 @@ const options = {headers: headers};
 })
 export class ShipsService {
 
-  shipsDetails = [
-    {name: 'MS Fram'},
-    {name: 'MS Nordkapp'},
-    {name: 'MS Polarlys'},
-    {name: 'MS NordNorge'},
-    {name: 'MS TrollFjord'}
-  ];
-
   constructor(private httpClient: HttpClient) { }
 
   searchShips(data){
     const originatorListUrl = 'api/ships/' + data;
     return this.httpClient.get(originatorListUrl, options);
-  }
-  searchDummyShips(data){
-    return this.shipsDetails;
   }
 }

@@ -48,12 +48,6 @@ export class SearchBoxComponent implements OnInit {
     this.searchForm.get('searchInput').patchValue('');
   }
 
-  searchDummyShips(data){
-    console.log(data);
-    this.ships = data ? this.shipsService.searchDummyShips(data) : [];
-    console.log(this.ships);
-  }
-
   searchShips(data){
     console.log(data);
     this.shipsService.searchShips(data).subscribe((response: any) => {
